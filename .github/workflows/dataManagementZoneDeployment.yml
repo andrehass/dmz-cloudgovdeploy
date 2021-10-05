@@ -15,7 +15,7 @@ on:
       - ".github/workflows/dataManagementZoneDeployment.yml"
 
 env:
-  AZURE_SUBSCRIPTION_ID: "04ecf75d-eabc-4a3e-a48a-d7e83d7a9a20" # Update to '{dataHubSubscriptionId}'
+  AZURE_SUBSCRIPTION_ID: "510886ac-69ef-48a6-b8a3-550ec6cdd35c" # Update to '{dataHubSubscriptionId}'
   AZURE_LOCATION: "eastus"                                 # Update to '{regionName}'
 
 jobs:
@@ -46,7 +46,7 @@ jobs:
           scope: subscription
           subscriptionId: ${{ env.AZURE_SUBSCRIPTION_ID }}
           region: ${{ env.AZURE_LOCATION }}
-          template: ${{ github.workspace }}/infra/main.json
+          template: ${{ github.workspace }}/infra/main.bicep
           parameters: ${{ github.workspace }}/infra/params.dev.json
           deploymentMode: Validate
           failOnStdErr: false
